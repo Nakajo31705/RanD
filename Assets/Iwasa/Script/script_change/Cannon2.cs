@@ -69,7 +69,6 @@ public class Cannon2 : MonoBehaviour
         {
             isPlayerInCannon = false;
             StopCoroutine(LaunchPlayer());
-            audioSource.PlayOneShot(SE_cannon);//オーディオの再生
         }
     }
 
@@ -89,16 +88,19 @@ public class Cannon2 : MonoBehaviour
                 {
                     // プレイヤーが四角状態で、発射タイプが四角の場合
                     LaunchPlayerWithForce();
+                    audioSource.PlayOneShot(SE_cannon);//オーディオの再生
                 }
                 else if (playerScript.Playerindex == TriangleIndex && selectedLaunchType == TriangleIndex)
                 {
                     // プレイヤーが三角状態で、発射タイプが三角の場合
                     LaunchPlayerWithForce();
+                    audioSource.PlayOneShot(SE_cannon);//オーディオの再生
                 }
                 else if (playerScript.Playerindex == BallIndex && selectedLaunchType == BallIndex)
                 {
                     // プレイヤーが丸状態で、発射タイプが丸の場合
                     LaunchPlayerWithForce();
+                    audioSource.PlayOneShot(SE_cannon);//オーディオの再生
                 }
                 else
                 {

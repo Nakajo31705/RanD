@@ -20,13 +20,13 @@ public class Wall2 : MonoBehaviour
         {
             Instantiate(RockObject, dfRock, Quaternion.identity);
             PlaCh = false;
+            Destroy(WallObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(WallObject);
             PlaCh = true;
         }
     }
