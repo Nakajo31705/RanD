@@ -28029,10 +28029,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b14c2707a415bd4dbdc9d1e1fa76ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallObject: {fileID: 0}
+  WallObject: {fileID: 1757438275}
   RockObject: {fileID: 8929643560097598925, guid: a4a9ddcbb98acaa4ebddda712d63d5ef, type: 3}
   dfRock: {x: 31, y: 45}
-  selection: 1
+  selection: 0
 --- !u!61 &1757438277
 BoxCollider2D:
   m_ObjectHideFlags: 0

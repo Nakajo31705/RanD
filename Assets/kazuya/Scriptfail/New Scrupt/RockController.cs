@@ -8,6 +8,7 @@ public class RockController : MonoBehaviour
     private new Rigidbody2D rigidbody;
     public float xSpeed;
     public AudioClip SE_rock;
+    public int selection;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();

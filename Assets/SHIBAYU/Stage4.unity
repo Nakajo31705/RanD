@@ -5962,7 +5962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WarpObj: {fileID: 1811737500}
   WarpTrigger: 0
-  selection: 0
+  selection: 2
   SE_warp: {fileID: 8300000, guid: 2e9a2c21f55efe441bba0a846f62f361, type: 3}
 --- !u!58 &388647673
 CircleCollider2D:
@@ -7280,7 +7280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WarpObj: {fileID: 1811737500}
   WarpTrigger: 0
-  selection: 0
+  selection: 2
   SE_warp: {fileID: 8300000, guid: 2e9a2c21f55efe441bba0a846f62f361, type: 3}
 --- !u!58 &461828628
 CircleCollider2D:
@@ -29518,7 +29518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WarpObj: {fileID: 1811737500}
   WarpTrigger: 0
-  selection: 0
+  selection: 1
   SE_warp: {fileID: 8300000, guid: 2e9a2c21f55efe441bba0a846f62f361, type: 3}
 --- !u!58 &1543014855
 CircleCollider2D:
@@ -38650,7 +38650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WarpObj: {fileID: 1811737500}
   WarpTrigger: 0
-  selection: 0
+  selection: 1
   SE_warp: {fileID: 8300000, guid: 2e9a2c21f55efe441bba0a846f62f361, type: 3}
 --- !u!58 &1965254079
 CircleCollider2D:
@@ -39192,7 +39192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WarpObj: {fileID: 1811737500}
   WarpTrigger: 0
-  selection: 0
+  selection: 2
   SE_warp: {fileID: 8300000, guid: 2e9a2c21f55efe441bba0a846f62f361, type: 3}
 --- !u!58 &1978034071
 CircleCollider2D:

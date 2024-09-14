@@ -443,11 +443,19 @@ public class PlCor : MonoBehaviour
                 {
                     PlMane.Alive = true;
                 }
-                else if (Playerindex == 1 && wall2.selection == 0)
-                {
-                    PlMane.Alive = true;
-                }
                 else PlMane.Alive = false;
+
+                if (wallcht2 == null)
+                {
+                    if (Playerindex == 1 && wall2.selection == 0)
+                    {
+                        PlMane.Alive = true;
+                    }
+                    else
+                    {
+                        PlMane.Alive = false;
+                    }
+                }
             }
         }
     }
