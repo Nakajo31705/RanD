@@ -757,7 +757,6 @@ public class PlCor : MonoBehaviour
                 PlMane.Player1.AddComponent<CircleCollider2D>();
                 spriteRenderer.sprite = Ball1;
                 CirCol = GetComponent<CircleCollider2D>();
-                CirCol.offset = new Vector2(-0.01311534f, 0.006557669f);
                 CirCol.radius = 0.4836881f;
                 PlMane.Player1.transform.localScale = new Vector3(BallScaleX, BallScaleY, BallScaleZ);
                 RoteZ = 0;
