@@ -49,8 +49,8 @@ public class Heart_catch : MonoBehaviour
     // シーンがロードされた時に呼び出されるメソッド
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // StageSelectシーンに入ったらハートをリセット
-        if (scene.name == "StageSelect")
+        // StageSelectシーンまたは MenuScene シーンに入ったらハートをリセット
+        if (scene.name == "StageSelect" || scene.name == "MenuScene")
         {
             OnStageReset(); // リセット処理
         }
