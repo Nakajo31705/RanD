@@ -97,7 +97,7 @@ public class PlCor : MonoBehaviour
         wallcht = GameObject.Find("Wallcht");//岩オブジェクトの参照
         wch = wallcht.GetComponent<Wallcht>();
         wallcht2 = GameObject.FindWithTag("Wallcht");
-        if(wallcht2 != null)
+        if (wallcht2 != null)
         {
             wall2 = wallcht2.GetComponent<Wall2>();
         }
@@ -106,7 +106,7 @@ public class PlCor : MonoBehaviour
 
     void Update()
     {
-        if (PlMane.Alive == true&&PlayerNo == 1)
+        if (PlMane.Alive == true && PlayerNo == 1)
         {
             float lsh = Input.GetAxis("Horizontal");
             if (transform.position.y <= -10)
@@ -114,7 +114,7 @@ public class PlCor : MonoBehaviour
                 PlMane.Alive = false;
             }
             transform.Rotate(new Vector3(RoteX, RoteY, RoteZ));//プレイヤーの角度を決定している
-            if (Input.GetKey(KeyCode.D)||(lsh == 1))
+            if (Input.GetKey(KeyCode.D) || (lsh == 1))
             {
                 prri = true;
                 RoteY = 0;
@@ -122,7 +122,7 @@ public class PlCor : MonoBehaviour
                 //右方向の入力処理
                 rigidbody.velocity = new Vector2(XSpeed, rigidbody.velocity.y);
             }
-            else if (Input.GetKey(KeyCode.A)||(lsh == -1))
+            else if (Input.GetKey(KeyCode.A) || (lsh == -1))
             {
                 prri = true;
                 //プレイヤーのY軸を回転させる
@@ -146,7 +146,7 @@ public class PlCor : MonoBehaviour
                 prri = false;
             }
             //プレイヤーの種類の変更処理
-            if (Input.GetKeyDown(KeyCode.Q)&&slope == false)
+            if (Input.GetKeyDown(KeyCode.Q) && slope == false)
             {
                 ++Playerindex;//プレイヤーのモードの値を追加
                 index = Playerindex;
@@ -203,86 +203,86 @@ public class PlCor : MonoBehaviour
                 spriteRenderer.sprite = Ball2;
             }
         }
-    if(PlMane.Player2 == null)
-    {
-        return;
-    }
-    else if(PlayerNo == 2)
-    {
-        if (PlMane.Alive == true)
+        if (PlMane.Player2 == null)
         {
-            float lsh = Input.GetAxis("Horizontal");
-            if (transform.position.y <= -10)
+            return;
+        }
+        else if (PlayerNo == 2)
+        {
+            if (PlMane.Alive == true)
             {
-                PlMane.Alive = false;
-            }
-            transform.Rotate(new Vector3(RoteX, RoteY, RoteZ));//プレイヤーの角度を決定している
-            if (Input.GetKey(KeyCode.RightArrow) || (lsh == 1))
-            {
-                prri = true;
-                RoteY = 0;
-                transform.eulerAngles = new Vector3(RoteX, RoteY, RoteZ);
-                //右方向の入力処理
-                rigidbody.velocity = new Vector2(XSpeed, rigidbody.velocity.y);
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow) || (lsh == -1))
-            {
-                prri = true;
-                //プレイヤーのY軸を回転させる
-                RoteY = 180;
-                transform.eulerAngles = new Vector3(RoteX, RoteY, RoteZ);
-                //左方向の入力処理
-                rigidbody.velocity = new Vector2(-XSpeed, rigidbody.velocity.y);
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(RoteX, RoteY, RoteZ);
-                if(Ice == false)
+                float lsh = Input.GetAxis("Horizontal");
+                if (transform.position.y <= -10)
                 {
-                    //方向キーが押されていない場合にX軸のベロシティを0に変更
-                    rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
+                    PlMane.Alive = false;
                 }
-                else if(Playerindex == 2)
+                transform.Rotate(new Vector3(RoteX, RoteY, RoteZ));//プレイヤーの角度を決定している
+                if (Input.GetKey(KeyCode.RightArrow) || (lsh == 1))
+                {
+                    prri = true;
+                    RoteY = 0;
+                    transform.eulerAngles = new Vector3(RoteX, RoteY, RoteZ);
+                    //右方向の入力処理
+                    rigidbody.velocity = new Vector2(XSpeed, rigidbody.velocity.y);
+                }
+                else if (Input.GetKey(KeyCode.LeftArrow) || (lsh == -1))
+                {
+                    prri = true;
+                    //プレイヤーのY軸を回転させる
+                    RoteY = 180;
+                    transform.eulerAngles = new Vector3(RoteX, RoteY, RoteZ);
+                    //左方向の入力処理
+                    rigidbody.velocity = new Vector2(-XSpeed, rigidbody.velocity.y);
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(RoteX, RoteY, RoteZ);
+                    if (Ice == false)
+                    {
+                        //方向キーが押されていない場合にX軸のベロシティを0に変更
+                        rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
+                    }
+                    else if (Playerindex == 2)
                     {
                         rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
                     }
-                prri = false;
-            }
-            //プレイヤーの種類の変更処理
-            if (Input.GetKeyDown(KeyCode.RightControl))
-            {
-                ++Playerindex;//プレイヤーのモードの値を追加
-                index = Playerindex;
-                if (Playerindex == 4)//範囲外の場合に範囲内に戻す
-                {
-                    Playerindex = 1;
+                    prri = false;
                 }
-                Playerchange();//スプライトの変更を実行
-                index = 0;
-            }
+                //プレイヤーの種類の変更処理
+                if (Input.GetKeyDown(KeyCode.RightControl))
+                {
+                    ++Playerindex;//プレイヤーのモードの値を追加
+                    index = Playerindex;
+                    if (Playerindex == 4)//範囲外の場合に範囲内に戻す
+                    {
+                        Playerindex = 1;
+                    }
+                    Playerchange();//スプライトの変更を実行
+                    index = 0;
+                }
                 if (Input.GetKeyDown(KeyCode.RightShift))
                 {
                     JumpUpdate();
                 }
                 switch (Playerindex)
-            {
-                case 1://値が1の場合四角の処理へ
-                    {
-                        Square();
-                        break;
-                    }
-                case 2://値が2の場合三角の処理へ
-                    {
-                        Triangle();
-                        break;
-                    }
-                case 3://値が3の場合丸の処理へ
-                    {
-                        Ball();
-                        break;
-                    }
+                {
+                    case 1://値が1の場合四角の処理へ
+                        {
+                            Square();
+                            break;
+                        }
+                    case 2://値が2の場合三角の処理へ
+                        {
+                            Triangle();
+                            break;
+                        }
+                    case 3://値が3の場合丸の処理へ
+                        {
+                            Ball();
+                            break;
+                        }
+                }
             }
-        }
             else//プレイヤーが死亡時にそれ用のスプライトに変更
             {
                 if (Playerindex == 1)
@@ -316,11 +316,11 @@ public class PlCor : MonoBehaviour
             transform.Rotate(new Vector3(RoteX, RoteY, RoteZ));//プレイヤーの角度を決定している
             if (Input.GetKey(KeyCode.D) || (lsh == 1))
             {
-                    RoteZ -= BallRote*Time.deltaTime;
+                RoteZ -= BallRote * Time.deltaTime;
             }
             else if (Input.GetKey(KeyCode.A) || (lsh == -1))
             {
-                    RoteZ -= BallRote*Time.deltaTime;
+                RoteZ -= BallRote * Time.deltaTime;
             }
             if (PlayerNo == 1)
             {
@@ -341,7 +341,7 @@ public class PlCor : MonoBehaviour
                     XSpeed = dfSpeed;//プレイヤーの速度を決定
                 }
             }
-            else if(PlayerNo == 2)
+            else if (PlayerNo == 2)
             {
                 transform.Rotate(new Vector3(0, 0, 0));
                 if (Input.GetKey(KeyCode.RightArrow) || (lsh == 1))
@@ -370,7 +370,7 @@ public class PlCor : MonoBehaviour
                     XSpeed = dfSpeed;//プレイヤーの速度を決定
                 }
             }
-            
+
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -378,7 +378,7 @@ public class PlCor : MonoBehaviour
         if (PlMane.Alive)
         {
             //ジャンプの制御
-            if (collision.gameObject.CompareTag("Ground") ||collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("sloperLeft") || collision.gameObject.CompareTag("sloperight") || collision.gameObject.CompareTag("slope") || collision.gameObject.CompareTag("Ice")||collision.gameObject.CompareTag("BreakingWall"))
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("sloperLeft") || collision.gameObject.CompareTag("sloperight") || collision.gameObject.CompareTag("slope") || collision.gameObject.CompareTag("Ice") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("BreakingWall"))
             {
                 JumpCount = 0;
             }
@@ -427,7 +427,7 @@ public class PlCor : MonoBehaviour
             //プレイヤーの死亡判定
             if (collision.gameObject.CompareTag("Dead"))
             {
-                    PlMane.Alive = false;
+                PlMane.Alive = false;
             }//岩にあたったときの判定
             if (collision.gameObject.CompareTag("Rock"))
             {
@@ -443,22 +443,25 @@ public class PlCor : MonoBehaviour
                 {
                     PlMane.Alive = true;
                 }
-                else if(Playerindex == 1&&wall2.selection == 0)
+                else if (Playerindex == 1 && wall2.selection == 0)
                 {
                     PlMane.Alive = true;
                 }
                 else PlMane.Alive = false;
             }
-            if (collision.gameObject.CompareTag("Wall"))
-            {
-                //壁のオブジェクトに触れている
-                Wall = true;
-            }
-            else
-            {
-                //壁のオブジェクトから離れた
-                Wall = false;
-            }
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            //壁のオブジェクトに触れている
+            Wall = true;
+        }
+        else
+        {
+            //壁のオブジェクトから離れた
+            Wall = false;
         }
     }
 
@@ -484,10 +487,10 @@ public class PlCor : MonoBehaviour
         //２段ジャンプ禁止！！
         if (JumpCount == 0)
         {//ジャンプ処理開始
-                rigidbody.gravityScale = 2;
-                ++JumpCount;
-                //ジャンプの高さを設定
-                rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpPower);
+            rigidbody.gravityScale = 2;
+            ++JumpCount;
+            //ジャンプの高さを設定
+            rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpPower);
             audioSource.PlayOneShot(SE_jamp);//SEの再生
         }
     }
@@ -500,7 +503,7 @@ public class PlCor : MonoBehaviour
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpPower);
             audioSource.PlayOneShot(SE_jamp);//SEの再生
         }
-        if(Playerindex == 2) 
+        if (Playerindex == 2)
         {
             if (context.performed)
             {
@@ -522,7 +525,7 @@ public class PlCor : MonoBehaviour
         BoxCol = GetComponent<BoxCollider2D>();
         if (PlayerNo == 1)
         {
-            if (Input.GetKeyDown(KeyCode.E)&&Wall == false)
+            if (Input.GetKeyDown(KeyCode.E) && Wall == false)
             {
                 ++Squareindex;
                 audioSource.PlayOneShot(SE_chg);
@@ -544,7 +547,7 @@ public class PlCor : MonoBehaviour
                 {
                     spriteRenderer.sprite = SquareLong1;
                     PlMane.Player1.transform.localScale = new Vector3(LongScaleX, LongScaleY, LongScaleZ);
-                    BoxCol.offset = new Vector2(0,0.3473648f);
+                    BoxCol.offset = new Vector2(0, 0.3473648f);
                     BoxCol.size = new Vector2(36.432f, 7.289754f);
                 }
                 else if (PlMane.Alive == false)
@@ -555,7 +558,7 @@ public class PlCor : MonoBehaviour
         }
         if (PlMane.Player2 != null)
         {
-            if(PlayerNo == 2)
+            if (PlayerNo == 2)
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow) && Wall == false)
                 {
@@ -585,7 +588,7 @@ public class PlCor : MonoBehaviour
                     }
                 }
             }
-            
+
         }
     }
 
@@ -602,7 +605,7 @@ public class PlCor : MonoBehaviour
                 }
                 return;
             }
-            else if(slope == false)
+            else if (slope == false)
             {
                 Playerindex = 1;
                 index = Playerindex;
@@ -611,13 +614,13 @@ public class PlCor : MonoBehaviour
             }
 
         }
-        
+
     }
 
-   public void Triangle()
+    public void Triangle()
     {
         if (PlMane.Alive)
-            if(PlayerNo == 1)
+            if (PlayerNo == 1)
             {
                 //キーを押すごとに45°回転する
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -625,7 +628,7 @@ public class PlCor : MonoBehaviour
                     RoteZ += 45;
                 }
             }
-            else if(PlayerNo == 2)
+            else if (PlayerNo == 2)
             {
                 //キーを押すごとに45°回転する
                 if (Input.GetKeyDown(KeyCode.RightShift))
@@ -637,21 +640,21 @@ public class PlCor : MonoBehaviour
     }
     public void OnTriangle(InputAction.CallbackContext context)
     {
-        if(Playerindex == 2)
+        if (Playerindex == 2)
         {
             return;
         }
-        else if(slope == false)
+        else if (slope == false)
         {
             Playerindex = 2;
             index = Playerindex;
             Playerchange();//スプライトの変更を実行
             index = 0;
         }
-        
+
     }
 
-   public void Ball()
+    public void Ball()
     {
         //ボールが坂にある時に速度を変更して、移動させる。
         if (Sloperight == true)
@@ -694,31 +697,31 @@ public class PlCor : MonoBehaviour
             }
 
         }
-        else 
+        else
         {
             jumpPower = dfjumpPower;
         }
     }
     public void OnBall(InputAction.CallbackContext context)
     {
-        if(Playerindex == 3)
+        if (Playerindex == 3)
         {
             return;
         }
-        else if(slope == false)
+        else if (slope == false)
         {
             Playerindex = 3;
             index = Playerindex;
             Playerchange();//スプライトの変更を実行
             index = 0;
         }
-        
+
     }
 
     //プレイヤーの形を変える処理
     void Playerchange()
     {
-        if(PlayerNo == 1)
+        if (PlayerNo == 1)
         {
             if (index == 1 || index == 4)//四角への変更
             {
@@ -758,7 +761,7 @@ public class PlCor : MonoBehaviour
                 CirCol.radius = 0.4836881f;
                 PlMane.Player1.transform.localScale = new Vector3(BallScaleX, BallScaleY, BallScaleZ);
                 RoteZ = 0;
-            } 
+            }
         }
         if (PlayerNo == 2)
         {
