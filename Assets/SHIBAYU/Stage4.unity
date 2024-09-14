@@ -16041,7 +16041,7 @@ MonoBehaviour:
   stageManager: {fileID: 0}
   GoalPoint: {fileID: 1486022884}
   Tutorial: 
-  GameClearScene: GameClear
+  GameClearScene: EndingScene
   GameOverScene: GameOver
   MenyScene: MenyScene
   stageSelectScene: StageSelect
@@ -27826,7 +27826,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.0720253}
@@ -27857,7 +27857,7 @@ MonoBehaviour:
   stageManager: {fileID: 0}
   GoalPoint: {fileID: 1486022884}
   Tutorial: 
-  GameClearScene: 
+  GameClearScene: EndingScene
   GameOverScene: 
   MenyScene: 
   stageSelectScene: 
