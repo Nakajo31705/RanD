@@ -1022,7 +1022,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8691988667611268554}
         m_TargetAssemblyTypeName: SceneManeger, Assembly-CSharp
-        m_MethodName: StageSelect
+        m_MethodName: menyScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1498,7 +1498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671773106059434392, guid: a69e8221cbdbbca4886b9d15939e48dd, type: 3}
       propertyPath: MenyScene
-      value: MainScen
+      value: MenyScene
       objectReference: {fileID: 0}
     - target: {fileID: 4671773106059434392, guid: a69e8221cbdbbca4886b9d15939e48dd, type: 3}
       propertyPath: GameOverScene
