@@ -434,14 +434,18 @@ public class PlCor : MonoBehaviour
                 if (Playerindex == 1 && wch.selection == 0)//プレイヤーが四角の場合
                 {
                     PlMane.Alive = true;
+                    return;
                 }
                 else if (Playerindex == 2 && wch.selection == 1)//プレイヤーが三角の場合
                 {
+                    Debug.Log(PlMane.Alive);
                     PlMane.Alive = true;
+                    return ;
                 }
                 else if (Playerindex == 3 && wch.selection == 2)//プレイヤーが丸の場合
                 {
                     PlMane.Alive = true;
+                    return;
                 }
                 else PlMane.Alive = false;
 
